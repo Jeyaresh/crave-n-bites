@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<!-- primary meta tags -->
+
+    <title>Crave & Bites - Amazing & Delicious Cakes</title>
+    <meta name="title" content="Crave & Bites - Amazing & Delicious Cakes" >
+    <meta name="description" content="This is a crave & Bites Website developed by....">
+
+
+    <!-- favicon -->
+
+    <link rel="shortcut icon" href="./assets/WhatsApp Image 2025-05-07 at 17.40.59.jpeg" type="image/svg+xml">
+
+    <!-- google font link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+
+    <!-- linking css -->
+
     <link rel="stylesheet" href="assets/css/style.css">
-  
+
+
+    <!-- preload image -->
+
+    <link rel="preload" as="image"  href="assets/images/hero-slider-1.jpg">
+    <link rel="preload" as="image"  href="assets/images/hero-slider-2.jpg">
+    <link rel="preload" as="image"  href="assets/images/hero-slider-3.jpg">
+
+    <style>
+        .reservation-formm{
+            margin-block-start: 200px;
+            height: 100%;
+        }
+        body{
+             background: linear-gradient(rgba(45, 103, 126, 0.772));
+ 
+        }
+    </style>
+
 
 </head>
-<body>
-    
+<body id="top">
 
-    <div class="topbar">
+    <!-- preloader -->
+
+    <div class="preload" data-preload>
+        <div class="circle"></div>
+        <p class="text">Crave & Bites</p>
+    </div>
+
+
+
+
+    <!-- topbar -->
+
+     <div class="topbar">
         <div class="container">
 
             <address class="topbar-item">
@@ -56,129 +105,270 @@
             
         </div>
      </div>
+    
 
 
+<!-- header -->
+ <header class="header" data-header>
+
+    <div class="container">
+
+        <a href="#" class="logo">
+           <!-- <img src="assets/crave&bites logo.jpeg" width="160" height="50" alt="Grilli - home">-->
+            <span>Crave & Bites</span>
+        </a>
+       
+       
+        <nav class="navbar" data-navbar>
+
+            <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+
+            <a href="#" class="logo">
+                <span>Crave & Bites</span>
+                <!-- 
+                    <img src="assets/images/logo.svg" width="160" height="50" alt="Grilli - home">
+                 -->
+            </a>
+
+            <ul class="navbar-list">
+
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-link hover-underline active">
+                        <div class="seperator"></div>
+
+                        <span class="span">home</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#menus" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">menus</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#about us" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">about us</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#chefs" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">our chefs</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#pages" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">pages</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#contact" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <p class="headline-1 navbar-title">Visit Us</p>
+
+                <address class="body-4">
+                    Crave & Bites, Delicious City,<br>
+                    London 9578, UK
+                </address>
+
+                <p class="body-4 navbar-text">Open: 9.30 am - 2.30pm</p>
+
+                <a href="mailto:booking@Crave n Bites.com" class="body-4 sidebar-link">booking@Crave n Bites.com</a>
+
+                <div class="seperator"></div>
+
+                <p class="contact-label">Booking Request</p>
+
+                <a href="tel:+88123123456" class="body-1 contact-number hover-underline">
+                    +88-123-123456
+                </a>
 
 
-
-
-
-
-
-    <section class="reservation">
-        <div class="container" style="margin-top: 300px;">
-            <div class="form reservation-form bg-black-1" style="background-color: rgba(0, 0, 0, 0.793);">
-
-                <form action="https://formsubmit.co/jeyareshdj5@gmail.com" method="POST" class="form-left">
-                    <!-- Hidden fields -->
-                    <input type="hidden" name="_subject" value="New Cake Order Reservation!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://jeyaresh.github.io/Crave-Bites/thankyou.html">
-                  
-                    <h2 class="headline-1 text-center">Online Order</h2>
-                    <p class="form-text text-center">
-                       For order call <a href="+88123123456" class="link">+88-123-123456</a> or fill out the order form.
-                    </p>
-                  
-                    <div class="input-wrapper">
-                      <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field" required>
-                      <input type="tel" name="phone" placeholder="Phone Number" class="input-field" required>
-                    </div>
-                  
-                    <div class="input-wrapper">
-                      <div class="icon-wrapper">
-                        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-                        <select name="person" class="input-field">
-                          <option value="1-person">1 kg</option>
-                          <option value="2-person">2 kg</option>
-                          <option value="3-person">3 kg</option>
-                          <option value="4-person">4 kg</option>
-                          <option value="5-person">5 kg</option>
-                          <option value="6-person">6 kg</option>
-                          <option value="7-person">7 kg</option>
-                        </select>
-                        <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                      </div>
-                  
-                      <div class="icon-wrapper">
-                        <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
-                        <input type="date" name="reservation-date" class="input-field" required>
-                        <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                      </div>
-                  
-                      <div class="icon-wrapper">
-                        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
-                        <select name="time" class="input-field">
-                          <option value="08:00 am">Chocolate Cake</option>
-                          <option value="09:00 am">Vanilla Cake</option>
-                          <option value="10:00 am">Red Velvet Cake</option>
-                          <option value="11:00 am">Black Forest Cake</option>
-                          <option value="12:00 pm">White Forest Cake</option>
-                          <option value="01:00 pm">	Marble Cake</option>
-                          <option value="02:00 pm">	Sponge Cake</option>
-                          <option value="03:00 pm">Butter Cake</option>
-                          <option value="04:00 pm">Opera Cake</option>
-                          <option value="05:00 pm">Funfetti Cake</option>
-                          <option value="06:00 pm">Tres Leches Cake</option>
-                          <option value="07:00 pm">Hummingbird Cake</option>
-                          <option value="08:00 pm">German Chocolate Cake</option>
-                          <option value="09:00 pm">Flourless Chocolate Cake</option>
-                          <option value="10:00 pm">Molten Lava Cake</option>
-                        </select>
-                        <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                      </div>
-                      
-                    </div>
-                   
-                  
-                    <textarea name="message" placeholder="Message on cake" autocomplete="off" class="input-field"></textarea>
-                  
-                    <button type="submit" class="btn btn-secondary">
-                      <span class="text text-1">Order Now</span>
-                      <span class="text text-2" aria-hidden="true">Order Now</span>
-                    </button>
-                  </form>
-
-                <div class="form-right text-center" style="background-image: url('assets/images/form-pattern.png');" >
-
-
-                    <h2 class="headline-1 text-center">Contact Us</h2>
-                    <p class="contact-label">Order-Request</p>
-                    <a href="+88123123456" class="body-1 contact-number hover-underline">+88-123-123456</a>
-                    <div class="seperator"></div>
-
-                    <p class="contact-label">Location</p>
-
-                    <address class="body-4">
-                        crave & bites, Delicious City, <br>
-                        London 9578, UK
-
-                    </address>
-
-                    <p class="contact-label"> time</p>
-                    <p class="body-4">
-                        Monday to Sunday <br>
-                        11.00 am - 2.30pm
-                    </p>
-
-
-                    <p class="contact-label"> time</p>
-
-                    <p class="body-4">
-                        Monday to Sunday <br>
-                        05.00 pm - 10.00pm
-                    </p>
-
-                </div>
-                
             </div>
-        </div>
-    </section>
+            
+        </nav>
+
+            
+        <a href="form.html" class="btn btn-secondary">
+            <span class="text text-1">Order Now</span>
+            <span class="text text-2" aria-hidden="true">Order Now</span>
+        </a>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+ </header>
 
 
 
-    <footer class="footer section has-bg-image text-center" style="background-image: url(cake/7.jpeg);">
+
+
+
+ <main>
+    <article>
+
+      
+
+     
+
+          <!--Reservation-->
+
+
+            <section class="reservation">
+                <div class="container">
+                    <div class="form reservation-formm bg-black-1" style="background-color: rgba(0, 0, 0, 0.793);">
+
+                        <form action="https://formsubmit.co/jeyareshdj5@gmail.com" method="POST" class="form-left">
+                            
+                            <!-- Hidden fields -->
+                            <input type="hidden" name="_subject" value="New Cake Order!">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://jeyaresh.github.io/Crave-Bites/thankyou.html">
+                            
+                          
+                            <h2 class="headline-1 text-center">Online Order</h2>
+                            <p class="form-text text-center">
+                               For order call <a href="+88123123456" class="link">+88-123-123456</a> or fill out the order form.
+                            </p>
+                          
+                            <div class="input-wrapper">
+                              <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field" required>
+                              <input type="tel" name="phone" placeholder="Phone Number" class="input-field" required>
+                            </div>
+                          
+                            <div class="input-wrapper">
+                              <div class="icon-wrapper">
+                                <ion-icon name="scale-outline" aria-hidden="true"></ion-icon>
+                                <select name="Kg" class="input-field">
+                                  <option value="1 kg">1 kg</option>
+                                  <option value="2 kg">2 kg</option>
+                                  <option value="3 kg">3 kg</option>
+                                  <option value="4 kg">4 kg</option>
+                                  <option value="5 kg">5 kg</option>
+                                  <option value="6 kg">6 kg</option>
+                                  <option value="7 kg">7 kg</option>
+                                </select>
+                                <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                              </div>
+                          
+                              <div class="icon-wrapper">
+                                <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
+                                <input type="date" name="Delivery-date" class="input-field" required>
+                                <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                              </div>
+                          
+                              <div class="icon-wrapper">
+                                <ion-icon name="pricetags-outline" aria-hidden="true"></ion-icon>
+                                <select name="Caketype" class="input-field">
+                                  <option value="Black Forest - Rs.900">Black Forest - Rs.900</option>
+                                  <option value="White Forest -Rs.900">White Forest -Rs.900</option>
+                                  <option value="Strawberry -Rs.900">Strawberry -Rs.900</option>
+                                  <option value="Blueberry - Rs.900">Blueberry - Rs.900</option>
+                                  <option value="Rosemilk - Rs.900">Rosemilk - Rs.900</option>
+                                  <option value="Litchi - Rs.900">	Litchi - Rs.900</option>
+                                  <option value="Pineapple - Rs.900">Pineapple - Rs.900</option>
+                                  <option value="Black Currant - Rs.950">Black Currant - Rs.950</option>
+                                  <option value="Mango -Rs.900">Mango -Rs.900</option>
+                                  <option value="Irish Coffee - Rs.950">Irish Coffee - Rs.950</option>
+                                  <option value="Choco Oreo - Rs.1000">Choco Oreo - Rs.1000</option>
+                                  <option value="Butterscotch -Rs.1000">Butterscotch -Rs.1000</option>
+                                  <option value="Red velvet -Rs.1200">Red velvet -Rs.1200</option>
+                                  <option value="Choco truffle - Rs.1200">Choco truffle - Rs.1200</option>
+                                  <option value="Milk choco truffle -Rs. 1300">Milk choco truffle -Rs. 1300</option>
+                                   <option value="White choco truffle - Rs 1100">White choco truffle - Rs 1100</option>
+                                  <option value="Choco truffle nuts - Rs.1200">Choco truffle nuts - Rs.1200</option>
+                                  <option value="Choco truffle overloaded - Rs.1350">Choco truffle overloaded - Rs.1350</option>
+                                  <option value="Ferroro Rocher- Rs.1300">Ferroro Rocher- Rs.1300</option>
+                                  <option value="Nutella - Rs.1300">Nutella - Rs.1300</option>
+                                  <option value="KitKat - Rs.1300">KitKat - Rs.1300</option>
+                                </select>
+                                <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                              </div>
+                              
+                            </div>
+                           
+                          
+                            <textarea name="message" placeholder="Message on cake" autocomplete="off" class="input-field"></textarea>
+                          
+                            <button type="submit" class="btn btn-secondary">
+                              <span class="text text-1">Order Now</span>
+                              <span class="text text-2" aria-hidden="true">Order Now</span>
+                            </button>
+                          </form>
+
+                        <div class="form-right text-center" style="background-image: url('assets/images/form-pattern.png');" >
+
+
+                            <h2 class="headline-1 text-center">Contact Us</h2>
+                            <p class="contact-label">Order-Request</p>
+                            <a href="+88123123456" class="body-1 contact-number hover-underline">+88-123-123456</a>
+                            <div class="seperator"></div>
+
+                            <p class="contact-label">Location</p>
+
+                            <address class="body-4">
+                                crave & bites, Delicious City, <br>
+                                London 9578, UK
+
+                            </address>
+
+                            <p class="contact-label"> time</p>
+                            <p class="body-4">
+                                Monday to Sunday <br>
+                                11.00 am - 2.30pm
+                            </p>
+
+
+                            <p class="contact-label"> time</p>
+
+                            <p class="body-4">
+                                Monday to Sunday <br>
+                                05.00 pm - 10.00pm
+                            </p>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+    </article>
+ </main>
+
+
+
+       <!--FOOTER-->
+
+
+       <footer class="footer section has-bg-image text-center" style="background-image: url(cake/7.jpeg);">
 
         <div class="container">
 
@@ -296,14 +486,26 @@
 
 
 
-      <!-- linking Java script -->
+       <!--BACK TO TOP-->
 
-      <script src="assets/js/script.js"></script>
 
-      <!-- Ion icon link -->
-       
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
+       <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+       </a>
+
+
+
+
+
+    <!-- linking Java script -->
+
+    <script src="assets/js/script.js"></script>
+
+    <!-- Ion icon link -->
+     
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
 </body>
 </html>
