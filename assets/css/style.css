@@ -1054,9 +1054,7 @@ body.nav-active { overflow: hidden; }
   #SERVICE
 \*-----------------------------------*/
 
-.service {
-  margin-top:25px;
-}
+
 .service .section-title {
   margin-block-end: 16px;
   color: black;
@@ -1571,10 +1569,6 @@ textarea.input-field {
   #EVENT
 \*-----------------------------------*/
 
-.event {
- 
-  margin-top: -100px;
-}
 .event .section-title {
   margin-block-end: 40px;
   background-color: rgba(0, 0, 0, 0.872);
@@ -1648,7 +1642,9 @@ textarea.input-field {
 \*-----------------------------------*/
 .footer {
   border-radius: 10px;
- 
+
+  background: transparent;
+  
 }
 .footer-top {
   margin-block-end: 70px;
@@ -1660,6 +1656,7 @@ textarea.input-field {
   background: var(--smoky-black-1) url(../images/footer-form-bg.png);
   background-position: center top;
   background-repeat: repeat;
+  border-radius: 30px;
 
 }
 
@@ -1668,11 +1665,12 @@ textarea.input-field {
   top: 0;
   width: 15px;
   height: 100%;
-  background-image: url(../images/footer-form-pattern.svg);
+ 
 }
 
 .footer-brand::before {
   left: 0;
+  
 }
 
 .footer-brand::after {
@@ -1723,10 +1721,12 @@ textarea.input-field {
 
 .footer-brand .icon-wrapper .input-field {
   cursor: text;
+  border-radius: 10px;
 }
 
 .footer-brand .btn {
   min-width: 100%;
+  
 }
 
 .footer-list {
@@ -2110,7 +2110,7 @@ textarea.input-field {
 
 /* Responsive for larger than 992px screen */
 
-@media (min-width:768px) {
+@media (min-width:992px) {
 
   /*custom property*/
 
@@ -2464,7 +2464,7 @@ textarea.input-field {
 
 /* Responsive for larger than 1400px screen */
 
-@media (min-width:1200px) {
+@media (min-width:1400px) {
 
 /*Header */
 
