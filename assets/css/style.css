@@ -612,8 +612,8 @@ body.nav-active { overflow: hidden; }
 }
 
 .circle{
-  width: 112px;
-  height: 112px;
+  width: 100px;
+  height: 50px;
   border-radius: var(--radius-circle);
   border: 3px solid var(--white);
   border-block-start-color: var(--smoky-black-3);
@@ -650,9 +650,9 @@ body.nav-active { overflow: hidden; }
 }
 
 
-/*-----------------------------------*\
-  #TOPBAR
-\*-----------------------------------*/
+                                                              /*-----------------------------------*\
+                                                                             #TOPBAR
+                                                              \*-----------------------------------*/
 .topbar{
   display: none;
 }
@@ -660,9 +660,11 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
+
+
+                                                              /*-----------------------------------*\
+                                                                             #HEADER
+                                                              \*-----------------------------------*/
 
 .overlay,
 .header .btn {
@@ -897,9 +899,9 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
+                                                  /*-----------------------------------*\
+                                                                  #HERO
+                                                  \*-----------------------------------*/
 
 .hero .slider-btn {
   display: none;
@@ -1635,9 +1637,9 @@ textarea.input-field {
 
 
 
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
+                                                     /*-----------------------------------*\
+                                                                    #FOOTER
+                                                     \*-----------------------------------*/
 .footer {
   border-radius: 10px;
   background: transparent;
@@ -2567,12 +2569,13 @@ textarea.input-field {
     margin: 0 60px 30px;
     padding: 20px 10px;
     overflow: hidden;
-    
+   
     
 }
 
 .card-list .card-item{
     list-style: none;
+    
 }
 
 .card-list .card-item .card-link{
@@ -2586,6 +2589,10 @@ textarea.input-field {
     border: 2px solid transparent;
     box-shadow: o 10px 10px rgba(0, 0, 0, 0.05);
     transition: 0.2 ease;
+    justify-items: center;
+   
+   
+   
     
 }
 
@@ -2607,31 +2614,22 @@ textarea.input-field {
 
 .card-list .card-link .badge{
 
-    color: #5372f0;
+    color: white;
     padding: 8px 16px;
     font-size: 0.95rem;
     font-weight: 500;
     margin: 16px 0 8px;
-    background: #dde4ff;
-    width: fit-content;
+    background: var(--gradient-1);
+    background-color: skyblue;
+    width: 50%;
     border-radius: 50px;
+    
 }
-.card-list .card-link .badge.gamer{
-    color: rgb(197, 129, 4);
-    background: #f0e4c0;
+
+.card-list .card-link .badge:hover {
+  background-color: rgba(135, 207, 235, 0.438);
 }
-.card-list .card-link .badge.editor{
-    color: rgb(244, 10, 10);
-    background: #f6c7cf;
-}
-.card-list .card-link .badge.marketing{
-    color: rgb(148, 45, 16);
-    background: #fff3cd;
-}
-.card-list .card-link .badge.designer{
-    color: rgb(35, 224, 41);
-    background: #c6f2c4;
-}
+
 .card-list .card-link .card-title{
     font-size: 1rem;
     color: var(--gold-crayola);
