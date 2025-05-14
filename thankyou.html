@@ -16,7 +16,7 @@
 
 
   <style>
-    body {
+    .bdy {
       background: var(--gradient-1);
       background-color: hsla(198, 43%, 56%, 0.869);
       font-family: sans-serif;
@@ -26,27 +26,28 @@
     }
 
     .containeer {
-      padding: 50px;
+      padding: 40px;
       margin-block-start: 100px;
       background: var(--gradient-1);
        background-color: rgb(75, 149, 178);
       border-radius: 50px;
-      height: 250px;
-      
+      height: 300px;
+      line-height: 35px;
       justify-items: center;
     }
 
-    .btn {
+    .btn2 {
       margin-block-start: 20px;
       border-radius: 30px;
+      height: 80px;
     }
   </style>
 </head>
-<body>
+<body class="bdy">
           <div class="containeer">
           <h1>Thank You for Your Order!</h1>
           <p>We'll get back to you soon.</p>
-          <a href="index.html" class="btn btn-secondary">
+          <a href="index.html" class="btn btn2 btn-secondary">
             <span class="text text-1">Back to Home</span>
             <span class="text text-2" aria-hidden="true">Back to Home</span>
         </a>

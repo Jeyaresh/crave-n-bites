@@ -1050,9 +1050,14 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #SERVICE
-\*-----------------------------------*/
+                                                  /*-----------------------------------*\
+                                                              #SERVICE
+                                                  \*-----------------------------------*/
+
+ .service {
+  background: var(--gradient-1);
+  background-color: skyblue;
+ }                                                 
 
 .service .section-title {
   margin-block-end: 16px;
@@ -1115,14 +1120,11 @@ body.nav-active { overflow: hidden; }
 
 
 
+                                                   /*-----------------------------------*\
+                                                                  #ABOUT
+                                                   \*-----------------------------------*/
 
 
-
-
-
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
 
 .about .section-text {
   margin-block: 15px 30px;
@@ -1199,11 +1201,12 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #SPECIAL DISH
-\*-----------------------------------*/
+                                                            /*-----------------------------------*\
+                                                                        #SPECIAL DISH
+                                                            \*-----------------------------------*/
 .special-dish {
   background: var(--gradient-1);
+  background-color: skyblue;
 }
 
 .special-dish-banner img {
@@ -1225,7 +1228,7 @@ body.nav-active { overflow: hidden; }
 
 .special-dish .section-text {
   margin-block: 16px 40px;
-  color: black;
+  color: var(--gold-crayola)
 }
 
 .special-dish-content .wrapper {
@@ -1260,11 +1263,14 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #MENU
-\*-----------------------------------*/
+                                                         /*-----------------------------------*\
+                                                                         #MENU
+                                                         \*-----------------------------------*/
 
-
+.menu {
+  background: var(--gradient-1);
+  background-color: skyblue;
+}
 .menu .section-title{
   margin-block-end: 40px;
 }
@@ -1298,7 +1304,8 @@ body.nav-active { overflow: hidden; }
 }
 
 .menu-card .card-title {
-  color: black;
+  color: var(--gradient-1);
+  color: skyblue;
   transition: var(--transition-1);
 }
 
@@ -1369,9 +1376,9 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #TESTIMONIALS
-\*-----------------------------------*/
+                                                     /*-----------------------------------*\
+                                                                 #TESTIMONIALS
+                                                     \*-----------------------------------*/
 
 
 
@@ -1426,9 +1433,9 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #RESERVATION
-\*-----------------------------------*/
+                                             /*-----------------------------------*\
+                                                         #RESERVATION
+                                              \*-----------------------------------*/
 
 .reservation-form {
   margin-block-start: -330px;
@@ -1506,9 +1513,9 @@ textarea.input-field {
 
 
 
-/*-----------------------------------*\
-  #FEATURES
-\*-----------------------------------*/
+                                            /*-----------------------------------*\
+                                                           #FEATURES
+                                            \*-----------------------------------*/
 
 
 .features .section-title {
@@ -1554,10 +1561,12 @@ textarea.input-field {
 
 
 
-/*-----------------------------------*\
-  #EVENT
-\*-----------------------------------*/
+                                          /*-----------------------------------*\
+                                                         #EVENT
+                                          \*-----------------------------------*/
 
+
+                                          
 .event .section-title {
   margin-block-end: 40px;
   background-color: rgba(0, 0, 0, 0.872);
