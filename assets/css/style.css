@@ -1054,7 +1054,6 @@ body.nav-active { overflow: hidden; }
   #SERVICE
 \*-----------------------------------*/
 
-
 .service .section-title {
   margin-block-end: 16px;
   color: black;
@@ -1124,11 +1123,6 @@ body.nav-active { overflow: hidden; }
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
-
-.about {
-  margin-top: -60px;
- 
-}
 
 .about .section-text {
   margin-block: 15px 30px;
@@ -1210,9 +1204,6 @@ body.nav-active { overflow: hidden; }
 \*-----------------------------------*/
 .special-dish {
   background: var(--gradient-1);
-  
-  
- 
 }
 
 .special-dish-banner img {
@@ -1272,7 +1263,6 @@ body.nav-active { overflow: hidden; }
 /*-----------------------------------*\
   #MENU
 \*-----------------------------------*/
-
 
 
 .menu .section-title{
@@ -1388,7 +1378,6 @@ body.nav-active { overflow: hidden; }
 .testi {
   padding-block-end: 340px;
   position: static;
-
 }
 
 .testi .quote {
@@ -1642,9 +1631,7 @@ textarea.input-field {
 \*-----------------------------------*/
 .footer {
   border-radius: 10px;
-
   background: transparent;
-  
 }
 .footer-top {
   margin-block-end: 70px;
