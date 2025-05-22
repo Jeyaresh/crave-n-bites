@@ -1,22 +1,22 @@
 {
   "name": "crave-bites",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Crave Bites - Node.js + Express web app with image uploads",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jeyaresh/Crave-Bites.git"
+    "url": "https://github.com/Jeyaresh/Crave-Bites.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeyaresh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jeyaresh/Crave-Bites/issues"
   },
   "homepage": "https://github.com/Jeyaresh/Crave-Bites#readme",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0",
     "multer": "^2.0.0"
