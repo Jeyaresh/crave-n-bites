@@ -1,0 +1,126 @@
+ :root{
+    --gradient-1: linear-gradient(to top,hsla(0, 0%, 0%, 0.9),hsl(186, 81%, 81%),transparent);
+ }
+
+
+
+
+
+
+ 
+
+
+
+body {
+    background: var(--gradient-1);
+    background-color: skyblue;
+}
+
+header {
+    display: flex;
+  
+    
+    align-items: center;
+    gap: 300px;
+    border-radius: 20px;
+    height: 80px;
+}
+
+header span{
+            margin-left: 20px;
+            font-size: 23px;
+            font-family: "Inter", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: aqua;
+}
+header a {
+    background-color: rgb(54, 171, 218);
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    color: black;
+}
+
+header a:hover {
+    background-color: rgb(64, 188, 237);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.landing-img ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    gap: 30px;
+   
+}
+
+
+
+.landing-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: -20px;
+}
+
+.landing-img form {
+    
+padding: 5px;
+}
+
+.landing-img button {
+    margin-left: -55px;
+}
+
+
+
+
+
+
+
+
+
+.service-img ul{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    height: 500px;
+    list-style: none;
+    text-align: center;
+}
+
+.service-img form {
+    padding-top: 5px;
+    padding-left: 40px;
+}
+
+.service-img img {
+    margin-left: -30px;
+    border-radius: 10px;
+}
+
+.service-img button {
+    margin-top: 10px;   
+}
+
+
+

@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Upload</title>
+
+
+
+
+
+
+
+
+
+
+  <title>Admin</title>
+<link rel="stylesheet" href="assets/css/admin.css">
 
 
 </head>
 
 
 <body>
+<header>
+<span>crave & bites</span>
 
+ 
+
+<a href="index.html">Home</a>
+</header>
+
+
+ 
+<div class="landing-img">
+
+<ul>
+<li>
+  <h2>landing page image 1</h2>
+
+  <img src="/uploads/cake1.jpeg" width="285" height="336" loading="lazy" alt="landing img" class="img-cover">
+  
+<form action="/upload/landing1" method="post" enctype="multipart/form-data">
+    <label>Change landing 1:</label>
+    <input type="file" name="image" required>
+    <button type="submit">Upload</button>
+  </form>
+</li>
 
 
 <li>
+  <h2>landing page image 2</h2>
 
-  <h2>landing page image 1</h2>
-<figure class="card-banner img-holder">
-  <img src="/uploads/landing1.jpeg" width="285" height="336" loading="lazy" alt="landing img" class="img-cover">
-</figure>  
+  <img src="/uploads/cake1.jpeg" width="285" height="336" loading="lazy" alt="landing img" class="img-cover">
+  
 <form action="/upload/landing1" method="post" enctype="multipart/form-data">
     <label>Change Cake 1:</label>
     <input type="file" name="image" required>
@@ -24,27 +57,45 @@
   </form>
 </li>
 
+<li>
+  <h2>landing page image 3</h2>
+
+  <img src="/uploads/cake1.jpeg" width="285" height="336" loading="lazy" alt="landing img" class="img-cover">
+ 
+<form action="/upload/landing1" method="post" enctype="multipart/form-data">
+    <label>Change Cake 1:</label>
+    <input type="file" name="image" required>
+    <button type="submit">Upload</button>
+  </form>
+</li>
+</ul>
+
+</div>
 
 
 
 
 
-  <ul class="grid-list">
+
+
+<div class="service-img">
+
+  <ul >
 
     <li>
       <div class="service-card">
       <h2>service image 1</h2>
 
 
-<figure class="card-banner img-holder">
+
   <img src="/uploads/cake1.jpeg" width="285" height="336" loading="lazy" alt="cake" class="img-cover">
-</figure>
+
 
 
  <form action="/upload/cake1" method="post" enctype="multipart/form-data">
   <label>Change Cake 1:</label>
-  <input type="file" name="image" required>
-  <button type="submit">Upload</button>
+  <input type="file" name="image" required> <br>
+  <button type="submit">Upload</button> 
 </form>
 </div>
 
@@ -56,11 +107,11 @@
 <li>
 
   <h2>service image 2</h2>
-<figure class="card-banner img-holder">
+
   <img src="/uploads/cake2.jpeg" width="285" height="336" loading="lazy" alt="Breakfast" class="img-cover">
-</figure>  <form action="/upload/cake2" method="post" enctype="multipart/form-data">
+  <form action="/upload/cake2" method="post" enctype="multipart/form-data">
     <label>Change Cake 1:</label>
-    <input type="file" name="image" required>
+    <input type="file" name="image" required> <br>
     <button type="submit">Upload</button>
   </form>
 </li>
@@ -70,18 +121,21 @@
 <li>
 
   <h2>service image 3</h2>
-<figure class="card-banner img-holder">
+
   <img src="/uploads/cake3.jpeg" width="285" height="336" loading="lazy" alt="Breakfast" class="img-cover">
-</figure>
+
   <form action="/upload/cake3" method="post" enctype="multipart/form-data">
     <label>Change Cake 1:</label>
-    <input type="file" name="image" required>
+    <input type="file" name="image" required> <br>
     <button type="submit">Upload</button>
   </form>
   </li>
 
 
   </ul>
+
+  
+  </div>
 
 
 
