@@ -170,4 +170,7 @@ window.addEventListener("DOMContentLoaded", () => {
   addImageFallback("landingImage1", "landing1");
   addImageFallback("landingImage2", "landing2");
   addImageFallback("landingImage3", "landing3");
+  addImageFallback("serviceImage1", "cake1");
+  addImageFallback("serviceImage2", "cake2");
+  addImageFallback("serviceImage3", "cake3");
 });
