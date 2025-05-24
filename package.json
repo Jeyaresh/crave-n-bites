@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Jeyaresh/Crave-Bites#readme",
   "dependencies": {
+    "cloudinary": "^1.41.3",
     "express": "^5.1.0",
-    "multer": "^2.0.0"
+    "multer": "^2.0.0",
+    "multer-storage-cloudinary": "^4.0.0"
   }
 }
