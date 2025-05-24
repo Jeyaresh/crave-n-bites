@@ -19,8 +19,8 @@ const storage = multer.diskStorage({
     cb(null, 'uploads/');
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname).toLowerCase();
-    const imageName = req.params.name + ext;
+    // Force extension to .jpg for consistency
+    const imageName = req.params.name + '.jpg';
     cb(null, imageName);
   }
 });
