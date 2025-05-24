@@ -59,6 +59,15 @@ app.post('/upload/:name', upload.single('image'), (req, res) => {
   res.redirect('/admin.html');
 });
 
+// Error handling middleware for multer and file type errors
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError || err.message.includes('Invalid file type')) {
+    console.error('Upload error:', err.message);
+    return res.status(400).send(err.message);
+  }
+  next(err);
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);

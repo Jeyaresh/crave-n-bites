@@ -155,10 +155,19 @@ new Swiper('.card-wrapper', {
 // JPG / JPEG Image Fallback
 // ========================
 window.addEventListener("DOMContentLoaded", () => {
-  const img = document.getElementById("landingImage");
-  if (img) {
+  function addImageFallback(id, baseName) {
+    const img = document.getElementById(id);
+    if (!img) return;
     img.onerror = function () {
-      img.src = "/uploads/landing2.jpeg";
+      // Try .jpeg if .jpg fails
+      if (img.src.endsWith(".jpg")) {
+        img.src = `/uploads/${baseName}.jpeg`;
+      }
+      // Optional: if you want, can add more fallbacks here
     };
   }
+
+  addImageFallback("landingImage1", "landing1");
+  addImageFallback("landingImage2", "landing2");
+  addImageFallback("landingImage3", "landing3");
 });
