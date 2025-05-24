@@ -174,3 +174,8 @@ window.addEventListener("DOMContentLoaded", () => {
   addImageFallback("serviceImage2", "cake2");
   addImageFallback("serviceImage3", "cake3");
 });
+
+
+
+  const timestamp = Date.now();
+  document.getElementById("landingImage1").src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=${timestamp}`;
