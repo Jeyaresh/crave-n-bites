@@ -22,7 +22,7 @@ const storage = new CloudinaryStorage({
       folder: 'uploads',               // Cloudinary folder
       public_id: req.params.name,      // Use URL param as image name
       format: 'jpg',                   // Force .jpg extension
-      transformation: [],              // Optional: resize/crop, etc.
+      transformation: [],              // Optional: resize/crop
       overwrite: true,                 // ✅ Force overwrite
       invalidate: true                 // ✅ Clear CDN cache
     };
@@ -57,7 +57,9 @@ app.use((err, req, res, next) => {
     console.error('❌ Upload error:', err.message);
     return res.status(400).send(err.message);
   }
-  next(err);
+
+  console.error('❌ Unexpected error:', err);
+  res.status(500).send('Internal Server Error');
 });
 
 // 🚀 Start Server
