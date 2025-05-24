@@ -1,78 +1,71 @@
 'use strict';
 
-
-//preload loading will be end after document is loaded//
-
-
+// ========================
+// Preload loading
+// ========================
 const preloader = document.querySelector("[data-preload]");
-
 window.addEventListener("load", function () {
-preloader.classList.add("loaded");
-document.body.classList.add("loaded");
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
 });
 
-
-
-
-// adding event listener in multiple elements//
-
+// ========================
+// Add event to multiple elements
+// ========================
 const addEventOnElements = function (elements, eventType, callback) {
-     for (let i =0, len = elements.length; i < len; i++) {
-        elements[i].addEventListener(eventType, callback);
-     }
-}
+  for (let i = 0, len = elements.length; i < len; i++) {
+    elements[i].addEventListener(eventType, callback);
+  }
+};
 
-
-//navbar//
-
+// ========================
+// Navbar
+// ========================
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
-const overlay  = document.querySelector("[data-overlay]");
+const overlay = document.querySelector("[data-overlay]");
 
 const toggleNavbar = function () {
-    navbar.classList.toggle("active");
-    overlay.classList.toggle("active");
-    document.body.classList.toggle("nav-active");
-}
+  navbar.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("nav-active");
+};
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
-
-//header and backtop//
-
+// ========================
+// Header & Back to Top
+// ========================
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 let lastScrollPos = 0;
 
 const hideHeader = function () {
-    const isScrollBottom = lastScrollPos < window.scrollY;
-    if (isScrollBottom) {
-        header.classList.add("hide");
-    } else {
-        header.classList.remove("hide");
-    }
+  const isScrollBottom = lastScrollPos < window.scrollY;
+  if (isScrollBottom) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
 
-    lastScrollPos = window.scrollY;
-    
-}
+  lastScrollPos = window.scrollY;
+};
 
 window.addEventListener("scroll", function () {
-    if (window.scrollY >= 50) {
-        header.classList.add("active");
-        backTopBtn.classList.add("active");
-        hideHeader();
-    } else {
-        header.classList.remove("active");
-        backTopBtn.classList.remove("active");
-    }
+  if (window.scrollY >= 50) {
+    header.classList.add("active");
+    backTopBtn.classList.add("active");
+    hideHeader();
+  } else {
+    header.classList.remove("active");
+    backTopBtn.classList.remove("active");
+  }
 });
 
-
-
-
-//hero slider//
-
+// ========================
+// Hero Slider
+// ========================
 const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
 const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
@@ -82,129 +75,90 @@ let currentSlidePos = 0;
 let lastActiveSliderItem = heroSliderItems[0];
 
 const updateSliderPos = function () {
-    lastActiveSliderItem.classList.remove("active");
-    heroSliderItems[currentSlidePos].classList.add("active");
-    lastActiveSliderItem = heroSliderItems[currentSlidePos];
-}
-
+  lastActiveSliderItem.classList.remove("active");
+  heroSliderItems[currentSlidePos].classList.add("active");
+  lastActiveSliderItem = heroSliderItems[currentSlidePos];
+};
 
 const slideNext = function () {
-    if(currentSlidePos >= heroSliderItems.length -1){
-        currentSlidePos = 0;
-    } else {
-        currentSlidePos++;
-    }
-
-    updateSliderPos();
-
-}
+  currentSlidePos = (currentSlidePos + 1) % heroSliderItems.length;
+  updateSliderPos();
+};
 heroSliderNextBtn.addEventListener("click", slideNext);
 
 const slidePrev = function () {
-    if(currentSlidePos <= 0 ) {
-        currentSlidePos = heroSliderItems.length -1;
-    } else {
-        currentSlidePos--;
-    }
-
-    updateSliderPos();
-}
-
+  currentSlidePos =
+    (currentSlidePos - 1 + heroSliderItems.length) % heroSliderItems.length;
+  updateSliderPos();
+};
 heroSliderPrevBtn.addEventListener("click", slidePrev);
 
-
-//auto slide//
-
+// ========================
+// Auto Slide
+// ========================
 let autoSlideInterval;
 
 const autoSlide = function () {
-    autoSlideInterval = setInterval(function () {
-        slideNext();
-    }, 7000);
-}
+  autoSlideInterval = setInterval(slideNext, 7000);
+};
 
 addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
-    clearInterval(autoSlideInterval);
+  clearInterval(autoSlideInterval);
 });
-
 addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
 window.addEventListener("load", autoSlide);
 
-
-
-
-//parallax effect//
-
+// ========================
+// Parallax Effect
+// ========================
 const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
-let x,y;
-
 window.addEventListener("mousemove", function (event) {
-    x = (event.clientX / this.window.innerWidth * 10) - 5;
-    y = (event.clientY / this.window.innerHeight * 10) - 5;
+  let x = (event.clientX / window.innerWidth) * 10 - 5;
+  let y = (event.clientY / window.innerHeight) * 10 - 5;
 
+  x = -x;
+  y = -y;
 
-
-    //reverse the number eg( 20 -> -20, 5 -> -5)
-
-    x = x - (x * 2);
-    y = y - (y * 2);
-
-
-    for (let i = 0, len = parallaxItems.length; i < len; i++) {
-        x = x * Number(parallaxItems[i].dataset.parallaxSpeed);
-        y = y * Number(parallaxItems[i].dataset.parallaxSpeed);
-        parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`
-    }
-    
+  for (let i = 0, len = parallaxItems.length; i < len; i++) {
+    const speed = Number(parallaxItems[i].dataset.parallaxSpeed);
+    parallaxItems[i].style.transform = `translate3d(${x * speed}px, ${y * speed}px, 0px)`;
+  }
 });
 
-
-
-
-
+// ========================
+// Swiper Carousel
+// ========================
 new Swiper('.card-wrapper', {
- 
-    loop: true,
-    spaceBetween: 20,
-    
-  
-    // pagination bullets
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-breakpoints: {
-    0:{
-        slidesPerView: 1,
-    },
-    768:{
-        slidesPerView: 2,
-    },
-    1024:{
-        slidesPerView: 3,
-    },
-}
+  loop: true,
+  spaceBetween: 20,
 
-  });
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
 
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
 
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
 
-
-
-
-  //image upload jpg or jpeg//
-  window.addEventListener("DOMContentLoaded", () => {
+// ========================
+// JPG / JPEG Image Fallback
+// ========================
+window.addEventListener("DOMContentLoaded", () => {
   const img = document.getElementById("landingImage");
-  img.onerror = function () {
-    img.src = "/uploads/landing2.jpeg";
-  };
+  if (img) {
+    img.onerror = function () {
+      img.src = "/uploads/landing2.jpeg";
+    };
+  }
 });
