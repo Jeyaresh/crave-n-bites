@@ -195,3 +195,16 @@ breakpoints: {
 }
 
   });
+
+
+
+
+
+
+  //image upload jpg or jpeg//
+  window.addEventListener("DOMContentLoaded", () => {
+  const img = document.getElementById("landingImage");
+  img.onerror = function () {
+    img.src = "/uploads/landing2.jpeg";
+  };
+});
