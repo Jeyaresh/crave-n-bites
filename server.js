@@ -5,7 +5,7 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000; // ⚠️ Use correct port for Render
 
 // 🔐 Cloudinary Configuration
 cloudinary.config({
@@ -14,51 +14,46 @@ cloudinary.config({
   api_secret: 'A67kwcz2ADqQvX6MGtEu8i231HU'
 });
 
-// ☁️ Cloudinary storage with overwrite & invalidate
+// ☁️ Cloudinary Storage
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: async (req, file) => {
     return {
-      folder: 'uploads',               // Cloudinary folder
-      public_id: req.params.name,      // Use URL param as image name
-      format: 'jpg',                   // Force .jpg extension
-      transformation: [],              // Optional: resize/crop
-      overwrite: true,                 // ✅ Force overwrite
-      invalidate: true                 // ✅ Clear CDN cache
+      folder: 'uploads',
+      public_id: req.params.name,
+      format: 'jpg',
+      transformation: [],
+      overwrite: true,      // ✅ Force overwrite same public_id
+      invalidate: true      // ✅ Invalidate CDN cache
     };
   }
 });
 
 const upload = multer({ storage });
 
-// Serve public and views
+// Static Files
 app.use(express.static('public'));
 app.use(express.static('views'));
 
 // 📤 Upload Route
 app.post('/upload/:name', upload.single('image'), (req, res) => {
   if (!req.file) {
-    console.log('❌ Upload failed — no file received.');
-    return res.status(400).send('Upload failed');
+    console.log('❌ No file uploaded');
+    return res.status(400).send('No file uploaded');
   }
 
-  console.log('✅ Cloudinary upload complete:', {
+  console.log('✅ Upload successful:', {
+    name: req.params.name,
     originalname: req.file.originalname,
-    path: req.file.path,
-    url: req.file.path // Cloudinary image URL
+    url: req.file.path
   });
 
   res.redirect('/admin.html');
 });
 
-// ❗ Error handler
+// ❗ Error Handling
 app.use((err, req, res, next) => {
-  if (err instanceof multer.MulterError || err.message.includes('Invalid file type')) {
-    console.error('❌ Upload error:', err.message);
-    return res.status(400).send(err.message);
-  }
-
-  console.error('❌ Unexpected error:', err);
+  console.error('❌ Error occurred:', err);
   res.status(500).send('Internal Server Error');
 });
 
