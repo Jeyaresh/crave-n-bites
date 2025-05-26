@@ -1,6 +1,25 @@
+:root{
+      --gold-crayola: hsl(197, 71%, 73%);
+
+
+
+      /* gradient colors */
+
+  --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+  --gradient-1: linear-gradient(to top,hsla(0, 0%, 0%, 0.4),hsla(0, 0%, 0%, 0.1),transparent);
+
+}
+
+
+
+
 body{
     margin: 0;
     font-family: poppins;
+    
+    background-color: skyblue;
+    
+
 }
 
 a{
@@ -36,7 +55,8 @@ a{
 }
 
 .listProduct .item {
-    background-color: #eeeee6;
+    background: var(--gradient-1);
+    background-color: var(--gold-crayola);
     padding: 20px;
     border-radius: 20px;
     transition: transform 0.3s ease;
@@ -44,7 +64,7 @@ a{
 }
 
 .listProduct .item:hover{
-     background-color: #d1d1cd;
+     background-color: rgb(94, 197, 237);
       transform: scale(1.1);
 }
 
@@ -92,6 +112,12 @@ a{
 
 .detail .image {
     position: relative;
+      transition: transform 0.3s ease;
+}
+.detail .image:hover{
+    
+  
+    transform: scale(1.1);
 }
 
 .detail .image::before {
