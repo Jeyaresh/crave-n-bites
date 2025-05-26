@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
+    <link rel="stylesheet" href="product.css">
+    
 </head>
 <body>
     
+
+
+    <div class="container">
+
+        <div class="title">PRODUCT LIST</div>
+        <div class="listProduct"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        //getting data from product.json
+        let products = null;
+        fetch('products.json')
+        .then(response => response.json())
+        .then(data => {
+            products = data;
+            console.log(products); 
+            addDataToHTML();
+        })
+
+        //add data product to html
+        let listProduct = document.querySelector('.listProduct');
+        function addDataToHTML(){
+            products.forEach(product => {
+                //create new element item
+                let newProduct = document.createElement('a');
+                newProduct.href = 'detail.html?id=' + product.id;
+                newProduct.classList.add('item');
+                newProduct.innerHTML = `
+                <img src="${product.image}">
+                <h2>${product.name}</h2>
+                <div class = "price">${product.price}</div>`
+
+                //add this element in list product class
+                listProduct.appendChild(newProduct);
+                
+            });
+        }
+    </script>
 </body>
 </html>
