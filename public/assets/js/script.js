@@ -179,3 +179,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("landingImage1").src = 
   "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=" + Date.now();
+
+    document.getElementById("landingImage2").src = 
+  "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=" + Date.now();
