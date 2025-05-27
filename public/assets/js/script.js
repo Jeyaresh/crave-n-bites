@@ -177,12 +177,42 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-  document.getElementById("landingImage1").src = 
-  "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=" + Date.now();
+ document.addEventListener("DOMContentLoaded", () => {
+  const imageIds = ["landingImage1", "landingImage2", "landingImage3"];
+  const cloudinaryBase = "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/";
 
-    document.getElementById("landingImage2").src = 
-  "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=" + Date.now();
-  document.addEventListener("DOMContentLoaded", () => {
-  const landingImage2 = document.getElementById("landingImage2");
-  landingImage2.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing2.jpg?v=${Date.now()}`;
+  imageIds.forEach(id => {
+    const img = document.getElementById(id);
+    if (img) {
+      const imageName = id.replace("landingImage", "landing"); // e.g. "landingImage2" → "landing2"
+      img.src = `${cloudinaryBase}${imageName}.jpg?v=${Date.now()}`;
+    }
+  });
 });
+
+
+
+
+
+//Admin page 
+
+
+  const imageForms = [
+    { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
+    { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
+    { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" },
+  ];
+
+  imageForms.forEach(({ formId, imageId, imageName }) => {
+    const form = document.getElementById(formId);
+    if (form) {
+      form.addEventListener("submit", () => {
+        setTimeout(() => {
+          const img = document.getElementById(imageId);
+          if (img) {
+            img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${imageName}.jpg?v=${Date.now()}`;
+          }
+        }, 1000); // Delay to ensure redirect has occurred
+      });
+    }
+  });
