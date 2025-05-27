@@ -176,9 +176,9 @@ window.addEventListener("DOMContentLoaded", () => {
   addImageFallback("landingImage1", "landing1");
   addImageFallback("landingImage2", "landing2");
   addImageFallback("landingImage3", "landing3");
-  addImageFallback("serviceImage1", "cake1");
-  addImageFallback("serviceImage2", "cake2");
-  addImageFallback("serviceImage3", "cake3");
+  addImageFallback("serviceImage1", "service1");
+  addImageFallback("serviceImage2", "service2");
+  addImageFallback("serviceImage3", "service3");
 });
 
 // ========================
@@ -199,7 +199,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const imageMap = {
     landingImage1: "landing1",
     landingImage2: "landing2",
-    landingImage3: "landing3"
+    landingImage3: "landing3",
+    serviceImage1: "service1",
+    serviceImage2: "service2",
+    serviceImage3: "service3",
+    specialCake1:  "special1"
   };
 
   Object.entries(imageMap).forEach(([id, publicId]) => {
@@ -212,7 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const imageForms = [
     { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
     { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
-    { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" }
+    { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" },
+    { formId: "uploadservice1", imageId: "serviceImage1", imageName: "service1" },
+    { formId: "uploadservice2", imageId: "serviceImage2", imageName: "service2" },
+    { formId: "uploadservice3", imageId: "serviceImage3", imageName: "service3" },
+    { formId: "uploadspecial",  imageId: "specialCake1",  imageName: "special1" }
   ];
 
   imageForms.forEach(({ formId, imageId, imageName }) => {
