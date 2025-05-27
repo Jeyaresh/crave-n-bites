@@ -182,3 +182,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("landingImage2").src = 
   "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=" + Date.now();
+  document.addEventListener("DOMContentLoaded", () => {
+  const landingImage2 = document.getElementById("landingImage2");
+  landingImage2.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing2.jpg?v=${Date.now()}`;
+});
