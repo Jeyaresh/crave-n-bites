@@ -184,60 +184,9 @@ window.addEventListener("DOMContentLoaded", () => {
 // ========================
 // Admin Page Upload (Instant + Alert)
 // ========================
-document.addEventListener("DOMContentLoaded", () => {
-  const imageForms = [
-    { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
-    { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
-    { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" }
-  ];
-
-  imageForms.forEach(({ formId, imageId, imageName }) => {
-    const form = document.getElementById(formId);
-    const img = document.getElementById(imageId);
-
-    if (form && img) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        fetch(`/upload/${imageName}`, {
-          method: "POST",
-          body: formData
-        })
-        .then(res => {
-          if (!res.ok) throw new Error("Upload failed");
-          img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${imageName}.jpg?v=${Date.now()}`;
-          alert("✅ Image uploaded successfully!");
-        })
-        .catch(err => {
-          console.error(err);
-          alert("❌ Upload failed. Please try again.");
-        });
-      });
-    }
-  });
-});
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const imageIds = ["landingImage1", "landingImage2", "landingImage3"];
-  imageIds.forEach(id => {
-    const img = document.getElementById(id);
-    if (img) {
-      const name = id.replace("landingImage", "landing");
-      img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${name}.jpg?v=${Date.now()}`;
-    }
-  });
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const img = document.getElementById("landingImage1");
-  if (img) {
-    img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/landing1.jpg?v=${Date.now()}`;
-  }
-});
-
+// ✅ Reusable cache-busting image refresher
 function refreshCloudinaryImage(id, publicId) {
   const img = document.getElementById(id);
   if (img) {
@@ -245,6 +194,20 @@ function refreshCloudinaryImage(id, publicId) {
   }
 }
 
+// ✅ Refresh Cloudinary images on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const imageMap = {
+    landingImage1: "landing1",
+    landingImage2: "landing2",
+    landingImage3: "landing3"
+  };
+
+  Object.entries(imageMap).forEach(([id, publicId]) => {
+    refreshCloudinaryImage(id, publicId);
+  });
+});
+
+// ✅ Handle admin upload and refresh image instantly
 document.addEventListener("DOMContentLoaded", () => {
   const imageForms = [
     { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
@@ -274,17 +237,5 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       });
     }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const imageMap = {
-    landingImage1: "landing1",
-    landingImage2: "landing2",
-    landingImage3: "landing3"
-  };
-
-  Object.entries(imageMap).forEach(([id, publicId]) => {
-    refreshCloudinaryImage(id, publicId);
   });
 });
