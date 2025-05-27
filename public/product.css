@@ -19,10 +19,7 @@
 body{
     margin: 0;
     font-family: poppins;
-    
     background-color: skyblue;
-    
-
 }
 
 
@@ -36,7 +33,7 @@ a{
     text-decoration: none;
 }
 
-.container {
+.containerr {
     width: 1200px;
     max-width: 90vw;
     margin: auto;
@@ -44,7 +41,7 @@ a{
     text-align: center;
 }
 
-.title {
+.titlee {
     font-size: xx-large;
     padding: 20px 0;
 }
@@ -260,3 +257,8 @@ a{
         justify-content: center;
     }
 }
+
+
+
+
+

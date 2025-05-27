@@ -2,9 +2,6 @@
   #index.css
 \*-----------------------------------*/
 
-/**
- * copyright 
- */
 
 
 
@@ -1095,6 +1092,7 @@ body.nav-active { overflow: hidden; }
   transition-delay: 0;
   z-index: -1;
   will-change: transform;
+  display: none;
 }
 
 
@@ -1114,6 +1112,20 @@ body.nav-active { overflow: hidden; }
 .service .card-title {
   margin-block-end: 12px;
 }
+
+
+/* ✅ Card grid layout */
+.gl {
+  display: grid;
+ grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.gl .text-1 {
+  max-height: 30px;
+  width: 40px;
+}
+
 
 
 
@@ -1362,7 +1374,11 @@ body.nav-active { overflow: hidden; }
 }
 
 
-
+.menu img{
+  height: 100px;
+  width: 100px;
+  object-fit: inherit;
+}
 
 
 
@@ -1939,8 +1955,7 @@ textarea.input-field {
         }
 
 
-
-
+        
             /* menu */
 
 
@@ -2165,6 +2180,7 @@ textarea.input-field {
       right: 0;
     }
 
+
       /*about*/
 
 
@@ -2271,8 +2287,7 @@ textarea.input-field {
                 margin-left: 280px;
               }
 
-
-
+ 
 
 }
 
@@ -2459,9 +2474,6 @@ textarea.input-field {
 
 
 }
-
-
-
 
 
 
@@ -2681,3 +2693,15 @@ textarea.input-field {
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

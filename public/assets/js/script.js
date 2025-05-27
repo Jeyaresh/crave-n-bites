@@ -159,6 +159,84 @@ new Swiper('.card-wrapper', {
   }
 });
 
+                                               
+
+//product page
+
+// ✅ Declare once
+let products = null;
+
+// ✅ Fetch once
+fetch('products.json')
+  .then(response => response.json())
+  .then(data => {
+    products = data;
+
+    // ✅ If it's the product listing page
+    if (document.querySelector('.listProduct') && !document.querySelector('.detail')) {
+      addDataToHTML();
+    }
+
+    // ✅ If it's the product detail page
+    if (document.querySelector('.detail')) {
+      showDetail();
+    }
+  });
+
+// ✅ Render product list (for product.html)
+function addDataToHTML() {
+  const listProduct = document.querySelector('.listProduct');
+  products.forEach(product => {
+    const newProduct = document.createElement('a');
+    newProduct.href = 'detail.html?id=' + product.id;
+    newProduct.classList.add('item');
+    newProduct.innerHTML = `
+      <img src="${product.image}">
+      <h2>${product.name}</h2>
+      <div class="price">${product.price}</div>
+    `;
+    listProduct.appendChild(newProduct);
+  });
+}
+
+// ✅ Render product detail (for detail.html)
+function showDetail() {
+  const detail = document.querySelector('.detail');
+  const productId = new URLSearchParams(window.location.search).get('id');
+  const thisProduct = products.find(p => p.id == productId);
+
+  if (!thisProduct) {
+    window.location.href = "/";
+    return;
+  }
+
+  detail.querySelector('.image img').src = thisProduct.image;
+  detail.querySelector('.name').innerText = thisProduct.name;
+  detail.querySelector('.price').innerText = 'Rs ' + thisProduct.price;
+  detail.querySelector('.description').innerText = thisProduct.description;
+
+  // ✅ Show similar products (excluding current one)
+  const listProduct = document.querySelector('.listProduct');
+  products
+    .filter(p => p.id != productId)
+    .forEach(product => {
+      const newProduct = document.createElement('a');
+      newProduct.href = 'detail.html?id=' + product.id;
+      newProduct.classList.add('item');
+      newProduct.innerHTML = `
+        <img src="${product.image}">
+        <h2>${product.name}</h2>
+        <div class="price">${product.price}</div>
+      `;
+      listProduct.appendChild(newProduct);
+    });
+}
+
+
+
+
+
+
 // ========================
 // JPG / JPEG Image Fallback
 // ========================
