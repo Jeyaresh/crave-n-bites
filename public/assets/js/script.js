@@ -197,22 +197,41 @@ window.addEventListener("DOMContentLoaded", () => {
 //Admin page 
 
 
-  const imageForms = [
-    { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
-    { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
-    { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" },
-  ];
+  document.addEventListener("DOMContentLoaded", () => {
+    const imageForms = [
+      { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
+      { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
+      { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" }
+    ];
 
-  imageForms.forEach(({ formId, imageId, imageName }) => {
-    const form = document.getElementById(formId);
-    if (form) {
-      form.addEventListener("submit", () => {
-        setTimeout(() => {
-          const img = document.getElementById(imageId);
-          if (img) {
-            img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${imageName}.jpg?v=${Date.now()}`;
-          }
-        }, 1000); // Delay to ensure redirect has occurred
-      });
+    imageForms.forEach(({ formId, imageId, imageName }) => {
+      const form = document.getElementById(formId);
+      if (form) {
+        form.addEventListener("submit", () => {
+          // Delay to let server redirect and Cloudinary CDN update
+          setTimeout(() => {
+            const img = document.getElementById(imageId);
+            if (img) {
+              img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${imageName}.jpg?v=${Date.now()}`;
+            }
+          }, 2000); // Adjust if needed based on your server/CDN delay
+        });
+      }
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("upload") === "success") {
+    alert("✅ Image uploaded successfully!");
+  }
+
+  // 👇 Optional: Auto-refresh images
+  ["landing1", "landing2", "landing3"].forEach(name => {
+    const img = document.getElementById(`landingImage${name.slice(-1)}`);
+    if (img) {
+      img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${name}.jpg?v=${Date.now()}`;
     }
   });
+});

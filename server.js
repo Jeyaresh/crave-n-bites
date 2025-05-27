@@ -48,7 +48,7 @@ app.post('/upload/:name', upload.single('image'), (req, res) => {
     url: req.file.path
   });
 
-  res.redirect('/admin.html');
+ res.redirect('/admin.html?upload=success');
 });
 
 // ❗ Error Handling
