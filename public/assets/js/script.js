@@ -5,16 +5,21 @@
 // ========================
 const preloader = document.querySelector("[data-preload]");
 window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
+  if (preloader) {
+    preloader.classList.add("loaded");
+    document.body.classList.add("loaded");
+  }
 });
 
 // ========================
 // Add event to multiple elements
 // ========================
 const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, callback);
+  if (!elements || elements.length === 0) return;
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i]) {
+      elements[i].addEventListener(eventType, callback);
+    }
   }
 };
 
@@ -26,9 +31,11 @@ const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
 
 const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
+  if (navbar && overlay) {
+    navbar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("nav-active");
+  }
 };
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
@@ -43,23 +50,24 @@ let lastScrollPos = 0;
 
 const hideHeader = function () {
   const isScrollBottom = lastScrollPos < window.scrollY;
-  if (isScrollBottom) {
-    header.classList.add("hide");
-  } else {
-    header.classList.remove("hide");
+  if (header) {
+    if (isScrollBottom) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
   }
-
   lastScrollPos = window.scrollY;
 };
 
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 50) {
-    header.classList.add("active");
-    backTopBtn.classList.add("active");
+    if (header) header.classList.add("active");
+    if (backTopBtn) backTopBtn.classList.add("active");
     hideHeader();
   } else {
-    header.classList.remove("active");
-    backTopBtn.classList.remove("active");
+    if (header) header.classList.remove("active");
+    if (backTopBtn) backTopBtn.classList.remove("active");
   }
 });
 
@@ -84,14 +92,14 @@ const slideNext = function () {
   currentSlidePos = (currentSlidePos + 1) % heroSliderItems.length;
   updateSliderPos();
 };
-heroSliderNextBtn.addEventListener("click", slideNext);
+if (heroSliderNextBtn) heroSliderNextBtn.addEventListener("click", slideNext);
 
 const slidePrev = function () {
   currentSlidePos =
     (currentSlidePos - 1 + heroSliderItems.length) % heroSliderItems.length;
   updateSliderPos();
 };
-heroSliderPrevBtn.addEventListener("click", slidePrev);
+if (heroSliderPrevBtn) heroSliderPrevBtn.addEventListener("click", slidePrev);
 
 // ========================
 // Auto Slide
@@ -159,11 +167,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const img = document.getElementById(id);
     if (!img) return;
     img.onerror = function () {
-      // Try .jpeg if .jpg fails
       if (img.src.endsWith(".jpg")) {
         img.src = `/uploads/${baseName}.jpeg`;
       }
-      // Optional: if you want, can add more fallbacks here
     };
   }
 
@@ -175,63 +181,40 @@ window.addEventListener("DOMContentLoaded", () => {
   addImageFallback("serviceImage3", "cake3");
 });
 
+// ========================
+// Admin Page Upload (Instant + Alert)
+// ========================
+document.addEventListener("DOMContentLoaded", () => {
+  const imageForms = [
+    { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
+    { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
+    { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" }
+  ];
 
+  imageForms.forEach(({ formId, imageId, imageName }) => {
+    const form = document.getElementById(formId);
+    const img = document.getElementById(imageId);
 
- document.addEventListener("DOMContentLoaded", () => {
-  const imageIds = ["landingImage1", "landingImage2", "landingImage3"];
-  const cloudinaryBase = "https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/";
+    if (form && img) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-  imageIds.forEach(id => {
-    const img = document.getElementById(id);
-    if (img) {
-      const imageName = id.replace("landingImage", "landing"); // e.g. "landingImage2" → "landing2"
-      img.src = `${cloudinaryBase}${imageName}.jpg?v=${Date.now()}`;
-    }
-  });
-});
+        const formData = new FormData(form);
 
-
-
-
-
-//Admin page 
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const imageForms = [
-      { formId: "uploadlanding1", imageId: "landingImage1", imageName: "landing1" },
-      { formId: "uploadlanding2", imageId: "landingImage2", imageName: "landing2" },
-      { formId: "uploadlanding3", imageId: "landingImage3", imageName: "landing3" }
-    ];
-
-    imageForms.forEach(({ formId, imageId, imageName }) => {
-      const form = document.getElementById(formId);
-      if (form) {
-        form.addEventListener("submit", () => {
-          // Delay to let server redirect and Cloudinary CDN update
-          setTimeout(() => {
-            const img = document.getElementById(imageId);
-            if (img) {
-              img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${imageName}.jpg?v=${Date.now()}`;
-            }
-          }, 2000); // Adjust if needed based on your server/CDN delay
+        fetch(`/upload/${imageName}`, {
+          method: "POST",
+          body: formData
+        })
+        .then(res => {
+          if (!res.ok) throw new Error("Upload failed");
+          img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${imageName}.jpg?v=${Date.now()}`;
+          alert("✅ Image uploaded successfully!");
+        })
+        .catch(err => {
+          console.error(err);
+          alert("❌ Upload failed. Please try again.");
         });
-      }
-    });
-  });
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("upload") === "success") {
-    alert("✅ Image uploaded successfully!");
-  }
-
-  // 👇 Optional: Auto-refresh images
-  ["landing1", "landing2", "landing3"].forEach(name => {
-    const img = document.getElementById(`landingImage${name.slice(-1)}`);
-    if (img) {
-      img.src = `https://res.cloudinary.com/dzqtakvvi/image/upload/uploads/${name}.jpg?v=${Date.now()}`;
+      });
     }
   });
 });
