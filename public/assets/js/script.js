@@ -199,6 +199,7 @@ function addDataToHTML() {
   });
 }
 
+
 // ✅ Render product detail (for detail.html)
 function showDetail() {
   const detail = document.querySelector('.detail');

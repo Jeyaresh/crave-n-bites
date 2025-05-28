@@ -33,7 +33,7 @@
   /* gradient colors */
 
   --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
-  --gradient-1: linear-gradient(to top,hsla(0, 0%, 0%, 0.9),hsla(0, 0%, 0%, 0.7),transparent);
+  --gradient-1: linear-gradient(to top,hsla(0, 0%, 0%, 0.7),hsla(0, 0%, 0%, 0.7),transparent);
 
 
   /* typography */ 
@@ -194,9 +194,9 @@ body.nav-active { overflow: hidden; }
 ::-webkit-scrollbar-thumb { background-color: var(--gold-crayola); }
 
 
-/*-----------------------------------*\
-  #TYPOGRAPHY
-\*-----------------------------------*/
+                                                  /*-----------------------------------*\
+                                                               #TYPOGRAPHY
+                                                  \*-----------------------------------*/
 
 .display-1,
 .headline-1,
@@ -274,9 +274,9 @@ body.nav-active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
+                                                    /*-----------------------------------*\
+                                                              #REUSED STYLE
+                                                    \*-----------------------------------*/
 .container{
   padding-inline: 16px;
 }

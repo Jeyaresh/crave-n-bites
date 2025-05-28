@@ -6,14 +6,243 @@
     <title>products</title>
     
     <link rel="stylesheet" href="product.css">
+       <!-- google font link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     
 </head>
-<body>
+<body class="bod">
+
+
+<!-- header -->
+ <header class="header" data-header>
+
+    <div class="container">
+
+        <a href="#" class="logo">
+           <!-- <img src="assets/crave&bites logo.jpeg" width="160" height="50" alt="Grilli - home">-->
+            <span>Crave & Bites</span>
+        </a>
+       
+       
+        <nav class="navbar" data-navbar>
+
+            <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+
+            <a href="#" class="logo">
+                <span>Crave & Bites</span>
+                <!-- 
+                    <img src="assets/images/logo.svg" width="160" height="50" alt="Grilli - home">
+                 -->
+            </a>
+
+            <ul class="navbar-list">
+
+                <li class="navbar-item">
+                    <a href="index.html" class="navbar-link hover-underline active">
+                        <div class="seperator"></div>
+
+                        <span class="span">home</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="menu.html" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">menus</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="about.html" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">about us</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#chefs" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">our chefs</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="admin.html" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">admin</span>
+                    </a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link hover-underline">
+                        <div class="seperator"></div>
+                        <span class="span">contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <p class="headline-1 navbar-title">Visit Us</p>
+
+                <address class="body-4">
+                    Crave & Bites, Delicious City,<br>
+                    London 9578, UK
+                </address>
+
+                <p class="body-4 navbar-text">Open: 9.30 am - 2.30pm</p>
+
+                <a href="mailto:booking@Crave n Bites.com" class="body-4 sidebar-link">booking@Crave n Bites.com</a>
+
+                <div class="seperator"></div>
+
+                <p class="contact-label">Booking Request</p>
+
+                <a href="tel:+88123123456" class="body-1 contact-number hover-underline">
+                    +88-123-123456
+                </a>
+
+
+            </div>
+            
+        </nav>
+
+            
+        <a href="form.html" class="btn btn-secondary">
+            <span class="text text-1">Order Now</span>
+            <span class="text text-2" aria-hidden="true">Order Now</span>
+        </a>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+ </header>
 
 
 
-    
+
+            <!--service-->
+
+        <section class="section service  text-center" aria-label="service">
+            <div class="container">
+                <p class="section-subtitle label-2">Flavors For Royalty</p>
+                <h2 class="headline-1 section-title">We Offer Top Notch</h2>
+                <p class="section-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum has been the industrys standard dummy text ever.
+                </p>
+
+
+                <ul class="grid-list">
+
+
+                    <li>
+                        <div class="service-card">
+                            <a href="#" class="has-before hover:shine">
+                                <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                                    <img src="cake/5.jpeg" width="285" height="336" loading="lazy" alt="Breakfast" class="img-cover">
+                                    
+                                </figure>
+                            </a>
+
+                            <div class="card-content">
+                                <h3 class="title-4 card-title">
+                                    <a href="#" style="color: black;">Birthday Cakes</a>
+                                </h3>
+
+                                <a href="#" class="btn btn-text hover-underline label-2">
+                                    <span class="text text-1">View Menu</span>
+                                    <span class="text text-2" aria-hidden="true">View Menu</span>
+                                </a>
+
+
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="service-card">
+                            <a href="#" class="has-before hover:shine">
+                                <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                                    <img src="cake/5.jpeg" width="285" height="336" loading="lazy" alt="Appetizers" class="img-cover">
+                                </figure>
+                            </a>
+
+                            <div class="card-content">
+                                <h3 class="title-4 card-title">
+                                    <a href="#" style="color: black;">Surprise Cakes</a>
+                                </h3>
+
+                               <a href="#" class="btn btn-text hover-underline label-2">
+                                    <span class="text text-1">View Menu</span>
+                                    <span class="text text-2" aria-hidden="true">View Menu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="service-card">
+                            <a href="#" class="has-before hover:shine">
+                                <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                                    <img src="cake/5.jpeg" width="285" height="336" loading="lazy" alt="Drinks" class="img-cover">
+                                </figure>
+                            </a>
+
+                            <div class="card-content">
+                                <h3 class="title-4 card-title">
+                                    <a href="#"style="color: black;">Chocolate Cakes</a>
+                                </h3>
+
+                                <a href="#" class="btn btn-text hover-underline label-2">
+                                    <span class="text text-1">View Menu</span>
+                                    <span class="text text-2" aria-hidden="true">View Menu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                
+
+
+                </ul>
+
+                <img src="assets/images/shape-1.png" width="246" height="412" loading="lazy" alt="shape" class="shape shape-1 move-anim">
+
+                <img src="assets/images/shape-2.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-2 move-anim">
+
+                
+            
+
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <div class="containerr">
@@ -25,6 +254,609 @@
 
 
 
+         <!--MENU-->
+
+
+
+        <section class="section menu" aria-label="menu-label" id="menu">
+
+            <div class="container"> 
+
+                <p class="section-subtitle text-center label-2">Special Selection</p>
+
+                <h2 class="headline-1 section-title text-center" style="color: black;">Delicious Cakes</h2>
+
+                <ul class="grid-list">
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="cake/7.jpeg" width="100" height="100" loading="lazy" alt="greek salad" class="img-cover">
+                            </a>
+                        </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">Black Forest</a>
+                                    </h3>
+
+                                    <span class="badge label-1">Seasonal</span>
+
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.</p>
+                            </div>
+
+
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                 <a href="form.html">
+                                <img src="cake/7.jpeg" width="100" height="100" loading="lazy" alt="greek salad" class="img-cover">
+                            </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">White Forest</a>
+                                    </h3>
+
+                                   
+
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">Strawberry</a>
+                                    </h3>
+
+                                   
+
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.</p>
+                            </div>
+
+                            
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">	Blueberry</a>
+                                    </h3>
+
+                                   
+                                    <span class="badge label-1">New</span>
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.</p>
+                            </div>
+
+                            
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">Rosemilk</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper.pices.</p>
+                            </div>
+
+                            
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">litchi </a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                               <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">Pineapple </a>
+                                    </h3>
+
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                        
+                        </div>
+                    </li>
+
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">black currant</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">mango</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">irish coffe</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">choco oreo</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">Butterscotch</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">red velvet</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+                
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">choco truffle</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">milk choco truffle</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">white choco truffle</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                               <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">choco truffle nuts</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">choco truffle overloaded</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">ferroro rocher</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <a href="form.html">
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                                </a>
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="form.html" class="card-title">nuttella</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+
+                        <li>
+                        <div class="menu-card hover:card">
+                            <figure class="card-banner img-holder" style="--width: 100; --height: 100;" >
+                                <img src="assets/menu-1.jpeg" width="100" height="100" loading="lazy" alt="Opu Fish"class="img-cover">
+                            </figure>
+
+                            <div>
+                                <div class="title-wrapper">
+                                    <h3 class="title-3">
+                                        <a href="#" class="card-title">kitkat</a>
+                                    </h3>
+
+                                   
+                                    
+                                    <span class="span title-2">₹ 900/-</span>
+                                </div>
+
+                                <p class="card-text label-1">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</p>
+                            </div>
+
+                            
+
+                        </div>
+                        </li>
+
+
+                </ul>
+
+                <p class="menu-text text-center" style="color: black;">During winter daily from <span class="span">7:00 pm</span>  to <span class="span">9:00 pm</span> </p>
+
+
+                <a href="menu.html" class="btn btn-primary">
+                    <span class="text text-1">View All Cakes</span>
+                    <span class="text text-2" aria-hidden="true">View All Cakes</span>
+                </a>
+
+                <img src="assets/images/shape-4.png" width="921" height="1036" loading="lazy" alt="shape" class="shape shape-2 mov-anim">
+
+                <img src="assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-3 mov-anim">
+
+
+            </div>
+
+
+         </section>
 
 
 
@@ -35,5 +867,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
+
+
+<!-- Ion icon link -->
+     
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 </body>
 </html>
